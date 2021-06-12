@@ -1,20 +1,19 @@
 import 'dart:math';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:rooster/themedata.dart';
 
 class ClockView extends StatefulWidget {
-
   final double? size;
 
-  const ClockView({ Key? key, double? this.size }) : super(key: key);
+  const ClockView({Key? key, this.size}) : super(key: key);
 
   @override
   _ClockViewState createState() => _ClockViewState();
 }
 
 class _ClockViewState extends State<ClockView> {
-
-  @override 
+  @override
   void initState() {
     Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {});
@@ -29,7 +28,7 @@ class _ClockViewState extends State<ClockView> {
       width: widget.size,
       height: widget.size,
       child: Transform.rotate(
-        angle: -pi/2,
+        angle: -pi / 2,
         child: CustomPaint(
           painter: ClockPainter(),
         ),
@@ -39,48 +38,49 @@ class _ClockViewState extends State<ClockView> {
 }
 
 class ClockPainter extends CustomPainter {
-
   @override
   void paint(Canvas canvas, Size size) {
-  
-    var centerX = size.width / 2 ;
+    var centerX = size.width / 2;
     var centerY = size.height / 2;
 
     var center = Offset(centerX, centerY);
     var radius = min(centerX, centerY);
 
-    var fillBrush = Paint()
-    ..color = Color(0xFF444974);
+    var fillBrush = Paint()..color = CustomColors.clockBG;
 
     var outlineBrush = Paint()
-    ..color = Color(0xFFEAECFF)
-    .. style = PaintingStyle.stroke
-    ..strokeWidth = size.width / 20;
+      ..color = CustomColors.clockOutline
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = size.width / 20;
 
-    var centerFillBrush = Paint()..color = Color(0xFFEAECFF);
+    var centerFillBrush = Paint()..color = CustomColors.clockOutline;
 
     var secondHandBrush = Paint()
-    ..color = Colors.orange.shade300
-    .. style = PaintingStyle.stroke
-    ..strokeCap = StrokeCap.round
-    ..strokeWidth = size.width / 40;
+      ..color = CustomColors.secHandColor
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = size.width / 40;
 
     var minuteHandBrush = Paint()
-    ..shader = RadialGradient(colors: [Color(0xFF748EF6), Color(0xFF77DDFF)])
-      .createShader(Rect.fromCircle(center: center, radius: radius))
-    .. style = PaintingStyle.stroke
-    ..strokeCap = StrokeCap.round
-    ..strokeWidth = size.width / 20;
+      ..shader = RadialGradient(colors: [
+        CustomColors.minHandStatColor,
+        CustomColors.minHandEndColor
+      ]).createShader(Rect.fromCircle(center: center, radius: radius))
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = size.width / 20;
 
     var hourHandBrush = Paint()
-    ..shader = RadialGradient(colors: [Color(0xFFEA74AB), Color(0xFFC279FB)])
-      .createShader(Rect.fromCircle(center: center, radius: radius))
-    .. style = PaintingStyle.stroke
-    ..strokeCap = StrokeCap.round
-    ..strokeWidth = size.width / 15;
+      ..shader = RadialGradient(colors: [
+        CustomColors.hourHandStatColor,
+        CustomColors.hourHandEndColor
+      ]).createShader(Rect.fromCircle(center: center, radius: radius))
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeWidth = size.width / 15;
 
     var dashBrush = Paint()
-      ..color = Color(0xFFEAECFF)
+      ..color = CustomColors.clockOutline
       ..style = PaintingStyle.stroke
       ..strokeWidth = 2;
 
@@ -89,13 +89,21 @@ class ClockPainter extends CustomPainter {
 
     var datetime = DateTime.now();
 
-    var minhandX = centerX + radius * 0.55 * cos(datetime.minute * 6 * pi / 180);
-    var minhandY = centerX + radius * 0.55 * sin(datetime.minute * 6 * pi / 180);
+    var minhandX =
+        centerX + radius * 0.55 * cos(datetime.minute * 6 * pi / 180);
+    var minhandY =
+        centerX + radius * 0.55 * sin(datetime.minute * 6 * pi / 180);
 
     canvas.drawLine(center, Offset(minhandX, minhandY), minuteHandBrush);
 
-    var hourhandX = centerX + radius * 0.4 * cos((datetime.hour * 30 + datetime.minute * 0.5) * pi / 180);
-    var hourhandY = centerX + radius * 0.4 * sin((datetime.hour * 30 + datetime.minute * 0.5) * pi / 180);
+    var hourhandX = centerX +
+        (radius *
+            0.4 *
+            cos((datetime.hour * 30 + datetime.minute * 0.5) * pi / 180));
+    var hourhandY = centerX +
+        (radius *
+            0.4 *
+            sin((datetime.hour * 30 + datetime.minute * 0.5) * pi / 180));
 
     canvas.drawLine(center, Offset(hourhandX, hourhandY), hourHandBrush);
 
@@ -103,7 +111,7 @@ class ClockPainter extends CustomPainter {
     var sechandY = centerX + radius * 0.6 * sin(datetime.second * 6 * pi / 180);
 
     canvas.drawLine(center, Offset(sechandX, sechandY), secondHandBrush);
-    
+
     canvas.drawCircle(center, 16, centerFillBrush);
 
     var outerRadius = radius;
