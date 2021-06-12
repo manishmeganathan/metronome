@@ -1,5 +1,5 @@
-name: clockapp
-description: A new Flutter project.
+name: rooster
+description: A Clock and Alarm Application
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -21,10 +21,11 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  intl: ^0.17.0
   flutter:
     sdk: flutter
   google_fonts: ^2.1.0
+  provider: ^5.0.0
+  intl: ^0.17.0
 
 
   # The following adds the Cupertino Icons font to your application.
