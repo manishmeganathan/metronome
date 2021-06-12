@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:clockapp/home.dart';
+import 'package:rooster/enums.dart';
+import 'package:rooster/home.dart';
+import 'package:provider/provider.dart';
+import 'package:rooster/menuinfo.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SafeArea(child: Home()),
+      home: ChangeNotifierProvider<MenuInfo>(
+          create: (context) => MenuInfo(MenuType.clock), child: Home()),
     );
   }
 }
