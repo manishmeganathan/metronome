@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:rooster/enums.dart';
+import 'package:rooster/data/enums.dart';
 
 class MenuInfo extends ChangeNotifier {
   MenuType menuType;

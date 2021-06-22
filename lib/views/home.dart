@@ -1,12 +1,12 @@
-import 'package:rooster/clockview.dart';
-import 'package:rooster/data.dart';
+import 'package:rooster/views/clockview.dart';
+import 'package:rooster/data/data.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:rooster/enums.dart';
-import 'package:rooster/menuinfo.dart';
-import 'package:rooster/themedata.dart';
+import 'package:rooster/data/enums.dart';
+import 'package:rooster/models/menuinfo.dart';
+import 'package:rooster/data/themedata.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

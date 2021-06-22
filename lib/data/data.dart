@@ -1,5 +1,5 @@
-import 'package:rooster/enums.dart';
-import 'package:rooster/menuinfo.dart';
+import 'package:rooster/data/enums.dart';
+import 'package:rooster/models/menuinfo.dart';
 
 List<MenuInfo> menuitems = [
   MenuInfo(MenuType.clock, title: 'Clock', imagesrc: 'assets/clock_icon.png'),

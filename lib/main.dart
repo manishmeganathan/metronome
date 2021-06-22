@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rooster/enums.dart';
-import 'package:rooster/home.dart';
+import 'package:rooster/data/enums.dart';
+import 'package:rooster/views/home.dart';
 import 'package:provider/provider.dart';
-import 'package:rooster/menuinfo.dart';
+import 'package:rooster/models/menuinfo.dart';
 
 void main() {
   runApp(MyApp());
