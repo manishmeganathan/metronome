@@ -19,6 +19,6 @@ All functional implementation was implemented independently.
 
 ## UI Reference
 ![Banner](images/UI1.webp)
-![Banner](images/UI2.PNG)
+![Banner](images/UI2.png)
 ![Banner](images/UI3.webp)
 ![Banner](images/UI4.webp)
