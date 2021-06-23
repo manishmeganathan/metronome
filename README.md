@@ -1,4 +1,17 @@
-# flutter-clockapp
-A simple flutter application for a clock and alarm
+# Metronome
+### A Timekeeper Application that includes a World Clock, Alarms, a Sleep Schedulers, a Stopwatch, an Animated Hourglass Timer, a Pomodoro Timer and a Todo/Task list.
 
-This project was built in part by following a tutorial based on https://github.com/afzalali15/flutter_alarm_clock
+**Status: In Development**  
+**Developed On: Dart & Flutter**   
+**Platform: iOS & Android**  
+
+## What's Done?
+- Home Page UI
+- Navigation Bar
+- World Map UI
+- World Map City Highlighting
+- Digital Clock UI and Functionality
+- Clock Page UI
+
+The inspiration for the UI was inspired by a Dribble post available [here](https://dribbble.com/shots/14553716-Mobile-Clock-App/attachments/6242470?mode=media)  
+All functional implementation was implemented independently.
