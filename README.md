@@ -1,5 +1,5 @@
 # Metronome
-### A Timekeeper Application that includes a World Clock, Alarms, a Sleep Schedulers, a Stopwatch, an Animated Hourglass Timer, a Pomodoro Timer and a Todo/Task list.
+### A timekeeper application that includes a World Clock, Alarms, a Sleep Scheduler, a Stopwatch, an Animated Hourglass Timer, a Pomodoro Timer and a Todo/Task list.
 
 **Status: In Development**  
 **Developed On: Dart & Flutter**   
@@ -14,7 +14,7 @@
 - Clock Page UI
 
 ## Note
-The inspiration for the UI was inspired by a Dribble post available [here](https://dribbble.com/shots/14553716-Mobile-Clock-App/attachments/6242470?mode=media)  
+The UI for the application was inspired by a Dribble post available [here](https://dribbble.com/shots/14553716-Mobile-Clock-App/attachments/6242470?mode=media)  
 All functional implementation was implemented independently.
 
 ## UI Reference
