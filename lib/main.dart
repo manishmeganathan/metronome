@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:rooster/data/enums.dart';
-import 'package:rooster/views/home.dart';
 import 'package:provider/provider.dart';
-import 'package:rooster/models/menuinfo.dart';
+import 'package:metronome/widgets/menubuttons.dart';
+import 'package:metronome/screens/homepage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Metronome());
 }
 
-class MyApp extends StatelessWidget {
+class Metronome extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ChangeNotifierProvider<MenuInfo>(
-          create: (context) => MenuInfo(MenuType.clock), child: Home()),
+      title: 'Metronome',
+      home: ChangeNotifierProvider<MenuButton>(
+          create: (context) => MenuButton(MenuIcon.clock, "Clock"),
+          child: Home()),
     );
   }
 }

@@ -1,5 +1,5 @@
-name: rooster
-description: A Clock and Alarm Application
+name: metronome
+description: A Timekeeper Application
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -26,6 +26,7 @@ dependencies:
   google_fonts: ^2.1.0
   provider: ^5.0.0
   intl: ^0.17.0
+  mdi: ^5.0.0-nullsafety.0
 
 
   # The following adds the Cupertino Icons font to your application.
