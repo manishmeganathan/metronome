@@ -13,5 +13,12 @@
 - Digital Clock UI and Functionality
 - Clock Page UI
 
+## Note
 The inspiration for the UI was inspired by a Dribble post available [here](https://dribbble.com/shots/14553716-Mobile-Clock-App/attachments/6242470?mode=media)  
 All functional implementation was implemented independently.
+
+## UI Reference
+![Banner](images/UI1.webp)
+![Banner](images/UI2.PNG)
+![Banner](images/UI3.webp)
+![Banner](images/UI4.webp)
